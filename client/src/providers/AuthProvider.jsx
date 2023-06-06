@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from 'react'
 import {
   GoogleAuthProvider,
@@ -56,7 +57,6 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, currentUser => {
       setUser(currentUser)
-      console.log('current user', currentUser)
       setLoading(false)
     })
     return () => {
