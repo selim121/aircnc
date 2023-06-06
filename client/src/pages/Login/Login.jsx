@@ -22,7 +22,7 @@ const Login = () => {
         signIn(email, password).then(result => {
             console.log(result.user);
             navigate(from, {replace: true});
-        }).error(err => {
+        }).catch(err => {
             console.log(err.message);
             toast.error(err.message)
             setLoading(false);
@@ -34,7 +34,7 @@ const Login = () => {
         signInWithGoogle().then(result => {
             console.log(result.user);
             navigate(from, {replace: true});
-        }).error(err => {
+        }).catch(err => {
             console.log(err.message);
             toast.error(err.message)
             setLoading(false);
@@ -47,7 +47,7 @@ const Login = () => {
         resetPassword(email).then(() => {
             toast.success('Please check your email for reset password.');
             setLoading(false);
-        }).error(err => {
+        }).catch(err => {
             console.log(err.message);
             toast.error(err.message)
             setLoading(false);
